@@ -1,141 +1,171 @@
 # AVP-PROJE-1.SINIF-1.DÖNEM
 Proje Bilgileri
 
+1. Proje Bilgileri
+
 Geliştirici: Nevzat Eren Koyuncu
 
 Bölüm: Bilgisayar Mühendisliği
 
-Dil: C
+Programlama Dili: C
 
-Proje Türü: Bireysel
+Uygulama Türü: Konsol (Terminal)
 
-Platform: Konsol (Terminal)
+Proje Tipi: Bireysel
 
-Programın Çalışma Mantığı
+2. Genel Çalışma Yapısı
+
+Program, kullanıcı etkileşimine dayalı bir menü sistemi ile çalışır.
 
 Program başlangıcında kullanıcıdan bilim insanı adı alınır
 
-Kullanıcıya 9 farklı fizik deneyi içeren bir ana menü gösterilir
+Ana menüde 9 farklı fizik deneyi sunulur
 
-Kullanıcı deney seçimini yapar
+Kullanıcı deney numarasını girerek seçim yapar
 
--1 girildiğinde program güvenli şekilde sonlandırılır
+-1 girilmesi durumunda program güvenli şekilde sonlandırılır
 
-Deneye özel fiziksel parametreler kullanıcıdan alınır
+Deneye ait fiziksel parametreler kullanıcıdan alınır
 
-Negatif girilen fiziksel değerler ternary operatörü ile pozitife çevrilir
+Negatif girilen değerler ternary operatörü ile mutlak değere çevrilir
 
-Hesaplamalar 8 gezegenin yerçekimi ivmesi kullanılarak yapılır
+Hesaplamalar 8 gezegen için ayrı ayrı yapılır
 
 Sonuçlar gezegen isimleriyle birlikte ekrana yazdırılır
 
-Program tekrar ana menüye döner
+3. Kullanılan Gezegenler ve Yerçekimi İvmeleri
 
-Kullanılan Gezegenler ve Yerçekimi İvmeleri (m/s^2)
+Tüm hesaplamalar aşağıdaki gezegenlerin yüzey yerçekimi ivmeleri (m/s^2) kullanılarak gerçekleştirilir:
 
-Merkür: 3.70
+Merkür : 3.70
 
-Venüs: 8.87
+Venüs : 8.87
 
-Dünya: 9.81
+Dünya : 9.81
 
-Mars: 3.71
+Mars : 3.71
 
-Jüpiter: 24.79
+Jüpiter : 24.79
 
-Satürn: 10.44
+Satürn : 10.44
 
-Uranüs: 8.69
+Uranüs : 8.69
 
-Neptün: 11.15
+Neptün : 11.15
 
-İçerilen Fizik Deneyleri ve Formüller
+4. Fizik Deneyleri ve Matematiksel Modeller
+4.1 Serbest Düşme
 
-Serbest Düşme
 Formül:
 h = (1/2) * g * t^2
-Hesaplanan değer: Alınan yol (metre)
 
-Yukarı Atış (Maksimum Yükseklik)
+Hesaplanan değer:
+Belirli bir sürede alınan yol (metre)
+
+4.2 Yukarı Atış (Maksimum Yükseklik)
+
 Formül:
 h_max = v0^2 / (2 * g)
-Hesaplanan değer: Maksimum yükseklik (metre)
 
-Kütle – Ağırlık Dönüşümü
+Hesaplanan değer:
+Cismin ulaşabileceği maksimum yükseklik (metre)
+
+4.3 Kütle – Ağırlık Dönüşümü
+
 Formül:
 G = m * g
-Hesaplanan değer: Ağırlık kuvveti (Newton)
 
-Potansiyel Enerji
+Hesaplanan değer:
+Ağırlık kuvveti (Newton)
+
+4.4 Potansiyel Enerji
+
 Formül:
 Ep = m * g * h
-Hesaplanan değer: Potansiyel enerji (Joule)
 
-Hidrostatik Basınç
+Hesaplanan değer:
+Potansiyel enerji (Joule)
+
+4.5 Hidrostatik Basınç
+
 Formül:
 P = rho * g * h
-Hesaplanan değer: Basınç (Pascal)
 
-Arşimet Kaldırma Kuvveti
+Hesaplanan değer:
+Basınç (Pascal)
+
+4.6 Arşimet Kaldırma Kuvveti
+
 Formül:
 Fk = rho * g * V
-Hesaplanan değer: Kaldırma kuvveti (Newton)
 
-Basit Sarkaç Periyodu
+Hesaplanan değer:
+Kaldırma kuvveti (Newton)
+
+4.7 Basit Sarkaç Periyodu
+
 Formül:
 T = 2 * pi * sqrt(L / g)
-Hesaplanan değer: Periyot (saniye)
 
-Statik İp Gerilmesi
+Hesaplanan değer:
+Bir tam salınım süresi (saniye)
+
+4.8 Statik İp Gerilmesi
+
 Formül:
 T = m * g
-Hesaplanan değer: İp gerilmesi (Newton)
 
-Asansör Dinamiği (Hissedilen Ağırlık)
+Hesaplanan değer:
+İp gerilmesi (Newton)
+
+4.9 Asansör Dinamiği (Hissedilen Ağırlık)
+
 Formül:
 N = m * (g + a) veya N = m * (g - a)
-Hesaplanan değer: Normal kuvvet (Newton)
 
-Teknik Detaylar
+Hesaplanan değer:
+Normal kuvvet (Newton)
 
-Her deney ayrı bir fonksiyon olarak tanımlanmıştır
+5. Teknik Uygulama Detayları
 
-Gezegen yerçekimi ivmeleri bir dizi içinde tutulur
+Her fizik deneyi ayrı bir fonksiyon olarak tanımlanmıştır
 
-Dizilere erişim pointer aritmetiği kullanılarak yapılır
+Gezegen yerçekimi ivmeleri sabit bir dizi içinde tutulur
 
-Negatif girişler için ternary operatörü (? :) ile mutlak değer alınır
+Dizilere erişim C pointer aritmetiği ile sağlanır
 
-Sabitler:
+Negatif değerler için ternary operatörü (? :) kullanılmıştır
+
+Kullanılan sabitler:
 
 PI = 3.141592653589793
 
 GEZEGEN_SAYISI = 8
 
-Derleme ve Çalıştırma
+6. Derleme ve Çalıştırma
 gcc main.c -o fizik_sim -lm
 ./fizik_sim
 
-Geliştirme Önerileri
+7. Geliştirme ve İyileştirme Olanakları
 
-Yerçekimi ivmesini sabit yerine dinamik hesaplama
+Yerçekimi ivmesinin dinamik olarak hesaplanması
 g = G * M / R^2
 
-Eğik atış analizlerinin eklenmesi
+Eğik atış (iki boyutlu hareket) analizlerinin eklenmesi
 
-Kinetik enerji ve yapılan iş hesaplamalarının eklenmesi
+Kinetik enerji ve yapılan iş hesaplamalarının dahil edilmesi
 
-Negatif değer kontrolü için ortak yardımcı fonksiyon yazılması
+Ortak bir mutlak değer kontrol fonksiyonu yazılması
 
-Kaynaklar
+8. Kaynaklar
 
-Halliday, Resnick, Walker – Fundamentals of Physics
+Halliday, D., Resnick, R., Walker, J. – Fundamentals of Physics
 
 NASA Solar System Exploration – Planetary Fact Sheet
 
-GeeksforGeeks – Pointers and Arrays in C
+GeeksforGeeks – Pointers and Arrays in C Programming
 
-Sonuç
+9. Sonuç
 
-Bu proje, temel fizik yasalarını C dilinde modüler ve karşılaştırmalı bir yapı ile uygulamaktadır.
-Sekiz gezegen üzerinde aynı deneyleri gerçekleştirmesi, projeyi öğretici ve teknik olarak güçlü hale getirmektedir.
+Bu çalışma, temel fizik yasalarını C programlama dili ile modüler ve sistematik bir yapıda uygulamaktadır.
+Aynı fiziksel olayın farklı gezegenlerdeki sonuçlarını karşılaştırmalı biçimde sunması, projeyi eğitici ve teknik açıdan güçlü kılmaktadır.
